@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đặt hàng mẫu | THUAN BOOKS</title>
+</head>
+
+<body bgcolor="#FFF9F0">
+
+<header>
+  <table role="presentation" width="100%" bgcolor="#254D3C"
+         cellpadding="18" cellspacing="0">
+    <tr><td align="center">
+      <font color="#FFFFFF" size="7"><b>THUAN BOOKS</b></font><br>
+      <font color="#F3CE7D" size="4">Học từng trang, vững từng bước</font>
+    </td></tr>
+  </table>
+
+  <nav aria-label="Điều hướng chính">
+    <table role="presentation" width="100%" bgcolor="#E9F1E7"
+           cellpadding="12" cellspacing="0">
+      <tr><td align="center">
+        <a href="index.html">Trang chủ</a> |
+        <a href="index.html#san-pham">Sản phẩm</a> |
+        <a href="chi-tiet.html">Chi tiết</a> |
+        <a href="bang-gia.html">Bảng giá</a> |
+        <a href="dat-hang.html">Đặt hàng</a>
+      </td></tr>
+    </table>
+  </nav>
+</header>
+
+<main>
+  <h1>Đặt sách - form thực hành</h1>
+  <p>
+    Chỉ nhập dữ liệu giả lập. Form này không tạo đơn hàng thật.
+    Dấu * là trường bắt buộc.
+  </p>
+
+  <form action="xac-nhan.html" method="get">
+    <fieldset>
+      <legend>Thông tin người đặt</legend>
+
+      <p>
+        <label for="ho-ten">Họ tên *</label><br>
+        <input type="text"
+               id="ho-ten"
+               name="hoTen"
+               minlength="2"
+               maxlength="60"
+               autocomplete="name"
+               placeholder="Nguyen Van A"
+               required>
+      </p>
+
+      <p>
+        <label for="email">Email *</label><br>
+        <input type="email"
+               id="email"
+               name="email"
+               autocomplete="email"
+               placeholder="demo@example.com"
+               required>
+      </p>
+
+      <p>
+        <label for="dien-thoai">Điện thoại giả lập</label><br>
+        <input type="tel"
+               id="dien-thoai"
+               name="dienThoai"
+               placeholder="0900000000">
+      </p>
+    </fieldset>
+
+    <fieldset id="chon-sach">
+      <legend>Thông tin sách</legend>
+
+      <p>
+        <label for="san-pham">Chọn sách *</label><br>
+        <select id="san-pham" name="maSanPham" required>
+          <option value="">-- Chọn một đầu sách --</option>
+          <option value="BK01">BK01 - Nhập môn Tài chính (150.000 đ)</option>
+          <option value="BK02">BK02 - Xác suất cơ bản (130.000 đ)</option>
+          <option value="BK03">BK03 - Thống kê ứng dụng (170.000 đ)</option>
+          <option value="BK04">BK04 - Kế toán nhập môn (125.000 đ)</option>
+          <option value="BK05">BK05 - Python cho người mới (185.000 đ)</option>
+          <option value="BK06">BK06 - HTML từng bước (145.000 đ)</option>
+          <option value="BK07">BK07 - Excel cho sinh viên (140.000 đ)</option>
+          <option value="BK08">BK08 - Tiếng Anh mỗi ngày (115.000 đ)</option>
+          <option value="BK09">BK09 - Từ vựng học thuật (120.000 đ)</option>
+          <option value="BK10">BK10 - Phương pháp học hiệu quả (95.000 đ)</option>
+        </select>
+      </p>
+
+      <p>
+        <label for="phien-ban">Phiên bản *</label><br>
+        <select id="phien-ban" name="phienBan" required>
+          <option value="bia-mem">Bìa mềm tiêu chuẩn</option>
+          <option value="bia-mem-boc-trong">
+            Bìa mềm có bọc trong (miễn phí)
+          </option>
+        </select>
+      </p>
+
+      <p>
+        <label for="so-luong">Số lượng (1-5 quyển) *</label><br>
+        <input type="number"
+               id="so-luong"
+               name="soLuong"
+               min="1"
+               max="5"
+               step="1"
+               value="1"
+               required>
+      </p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Nhận hàng và ghi chú</legend>
+
+      <p>Hình thức nhận hàng *</p>
+
+      <p>
+        <input type="radio"
+               id="tai-quay"
+               name="nhanHang"
+               value="tai-quay"
+               required>
+        <label for="tai-quay">Nhận tại cửa hàng</label><br>
+
+        <input type="radio"
+               id="giao-tan-noi"
+               name="nhanHang"
+               value="giao-tan-noi"
+               required>
+        <label for="giao-tan-noi">Giao tận nơi</label>
+      </p>
+
+      <p>
+        <input type="checkbox"
+               id="goi-qua"
+               name="goiQua"
+               value="yes">
+        <label for="goi-qua">Gói quà miễn phí (minh họa)</label>
+      </p>
+
+      <p>
+        <label for="ghi-chu">
+          Ghi chú, địa chỉ giả lập nếu chọn giao tận nơi
+        </label><br>
+        <textarea id="ghi-chu"
+                  name="ghiChu"
+                  rows="4"
+                  cols="45"
+                  maxlength="300"
+                  placeholder="Ghi chú cho yêu cầu mẫu"></textarea>
+      </p>
+    </fieldset>
+
+    <p>
+      <input type="checkbox"
+             id="dong-y"
+             name="dongY"
+             value="yes"
+             required>
+      <label for="dong-y">
+        Tôi hiểu đây là form thực hành, không tạo đơn hàng thật. *
+      </label>
+    </p>
+
+    <p>
+      <button type="submit">Gửi yêu cầu mẫu</button>
+      <button type="reset">Nhập lại</button>
+    </p>
+  </form>
+</main>
+
+<footer>
+  <hr>
+  <table role="presentation" width="100%" bgcolor="#254D3C"
+         cellpadding="16" cellspacing="0">
+    <tr><td align="center">
+      <font color="#FFFFFF">
+        <b>THUAN BOOKS</b> | Huỳnh Phú Thuận | © 2026
+      </font><br>
+      <font color="#F3CE7D">
+        Sản phẩm, giá và chính sách là dữ liệu minh họa phục vụ học tập.
+      </font><br>
+      <a href="index.html"><font color="#FFFFFF">Về trang chủ</font></a>
+    </td></tr>
+  </table>
+</footer>
+
+</body>
+</html>
